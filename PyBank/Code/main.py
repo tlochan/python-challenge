@@ -54,7 +54,7 @@ with open(bankcsv, 'r', newline="") as myfile:
         print("Greatest profit in a month: $" + str(maxprofit) + " in " + str(month[max_date_index]) + " 20" + str(year[max_date_index]))
         print("Largest loss in a month: $" + str(minprofit)+ " in " + str(month[min_date_index]) + " 20" + str(year[min_date_index]))
 
-output = os.path.join("..", "Analysis", "Financial_Analysis.csv")
+output = os.path.join("..", "Analysis", "Financial_Analysis.txt")
 
 with open(output, 'w', newline="") as outputfile:
         writer = csv.writer(outputfile)

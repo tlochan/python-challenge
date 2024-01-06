@@ -1,0 +1,10 @@
+Voting Analysis
+ Election Results
+-------------------------------------------------
+Total Votes Cast: 369711
+"Charles Casper Stockham: 85213 votes, 23.0%"
+"Diana DeGette: 272892 votes, 73.8%"
+"Raymon Anthony Doane: 11606 votes, 3.1%"
+ 
+-------------------------------------------------
+Winner: Diana DeGette
