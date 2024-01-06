@@ -39,10 +39,12 @@ with open(csvpath, 'r', newline="") as csvfile:
     ordered =set(voterid)
     ordered_total = len(ordered)
     
+    #candidate names from candidate list
     can1 = candidate_list[0]
     can2 = candidate_list[1]
     can3 = candidate_list[2]
    
+    #for loop addidng 1 for each name match
     for i in vote:
         if i == can1:
             can1_total = int(can1_total) + 1
@@ -51,19 +53,23 @@ with open(csvpath, 'r', newline="") as csvfile:
         elif i ==can3:
             can3_total = int(can3_total) + 1
     
+    #percentage calculation, rounded to 1 decimal
     can1_percent = round((can1_total/vote_total)*100,1)
     can2_percent = round((can2_total/vote_total)*100,1)
     can3_percent = round((can3_total/vote_total)*100,1)
     
+    #create a list with all of the totals, winner = max
     can_totals = [int(can1_total), int(can2_total), int(can3_total)]
     winner_total = max(can_totals)
     
+    #matching index of max total to candidate list to get winning candidate name
     winner_index = 0
     for x in can_totals:
         if x == winner_total:
             winner_index = can_totals.index(x)  
     winner = candidate_list[winner_index]
 
+    #print all results
     print("Election Results")
     print("-------------------------------------------------")
     if ordered_total ==vote_total:
@@ -77,7 +83,8 @@ with open(csvpath, 'r', newline="") as csvfile:
     
     print("Winner: " + str(winner))
     print("-------------------------------------------------")
-   
+
+#outputfile in analysis folder
 output = os.path.join ( "Analysis", "Voting_Analysis.txt")
 
 with open(output, 'w', newline="") as outputfile:
